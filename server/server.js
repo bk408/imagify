@@ -12,7 +12,14 @@ const app = express();
 await connectDB();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ['https://imagify-zx66.onrender.com'], // Add your frontend URL here
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+   
+  })
+);
+
 
 
 
